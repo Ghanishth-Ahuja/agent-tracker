@@ -72,16 +72,6 @@ npm start
 
 ---
 
-## CSV Format
-
-| userEmail         | taskTitle      | taskDescription | dueDate    |
-| ----------------- | -------------- | --------------- | ---------- |
-| user@example.com  | Call client A  | Follow-up call  | 2025-06-05 |
-| user2@example.com | Prepare report | Monthly report  | 2025-06-10 |
-
-Emails must match existing users to assign tasks properly.
-
----
 
 ## Folder Structure
 
@@ -92,8 +82,4 @@ agent-tracker/
 ├── README.md
 ```
 
----
 
-## License
-
-MIT License
