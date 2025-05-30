@@ -2,103 +2,98 @@
 
 ## Overview
 
-Agent Tracker is a MERN stack web application that allows admins to manage agents/users and assign tasks efficiently. Admins can create users, upload tasks via CSV files, and users can sign in to view their assigned tasks.
+Agent Tracker is a MERN stack web application where admins manage agents/users and assign tasks. Admins can create users and upload CSV files to assign tasks, while users sign in to see their assigned tasks.
 
 ---
 
 ## Features
 
-- **Admin Panel**
-
-  - Admin login and authentication
-  - Add new agents/users manually
-  - Upload CSV files to assign tasks to multiple users at once
-
-- **User Panel**
-  - User login and authentication
-  - View tasks assigned to the logged-in user
+- Admin login and authentication
+- Add agents/users manually
+- Upload CSV to assign tasks to users
+- User login and view assigned tasks
 
 ---
 
-## Technology Stack
+## Tech Stack
 
-- **Frontend:** React.js
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Authentication:** JWT (JSON Web Tokens)
-- **CSV Parsing:** ("fast-csv" used for control)
+- React.js (Frontend)
+- Node.js & Express.js (Backend)
+- MongoDB (Database)
+- JWT for authentication
+- `fast-csv` for CSV parsing
 
 ---
 
-## Getting Started
+## Setup & Run
 
-### Prerequisites
+Clone the repo:
 
-- Node.js (v14+ recommended)
-- MongoDB instance (local or cloud)
-- npm or yarn
+```bash
+git clone https://github.com/Ghanishth-Ahuja/agent-tracker.git
+cd agent-tracker
+```
 
-### Installation
+Install backend dependencies and frontend dependencies:
 
-1. Clone the repository: https://github.com/Ghanishth-Ahuja/agent-tracker
-   cd agent-tracker
+```bash
+cd backend && npm install
+cd ../frontend && npm install
+```
 
-Install backend dependencies:
+Create `.env` in the `backend` folder:
 
-cd backend
-npm install
-Install frontend dependencies:
-
-cd ../frontend
-npm install
-Configure environment variables:
-
-Create a .env file in the backend folder with the following variables:
-
-env
-
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
-Run the development servers:
+```
 
-In one terminal, start the backend:
+Start backend (in one terminal):
 
+```bash
 cd backend
 npm run dev
-In another terminal, start the frontend:
+```
 
+Start frontend (in another terminal):
+
+```bash
 cd frontend
 npm start
+```
 
-# Usage
+---
 
-Admin Workflow
-Log in using admin credentials.
+## Usage
 
-Add new users/agents manually or upload a CSV file with user/task details.
+- Admin logs in, adds users or uploads CSV with tasks assigned to users by email.
+- Users log in to see their assigned tasks.
 
-View all users and the tasks assigned to them.
+---
 
-User Workflow
-Sign up or log in with user credentials.
+## CSV Format
 
-View the dashboard to see tasks assigned specifically to the logged-in user.
+| userEmail         | taskTitle      | taskDescription | dueDate    |
+| ----------------- | -------------- | --------------- | ---------- |
+| user@example.com  | Call client A  | Follow-up call  | 2025-06-05 |
+| user2@example.com | Prepare report | Monthly report  | 2025-06-10 |
 
-CSV Format for Task Assignment
-The CSV file should have the following columns:
+Emails must match existing users to assign tasks properly.
 
-userEmail taskTitle taskDescription dueDate
-user@example.com Call client A Follow-up call 2025-06-05
-user2@example.com Prepare report Monthly report 2025-06-10
+---
 
-userEmail should match an existing user.
+## Folder Structure
 
-Tasks will be assigned to the corresponding user based on their email.
-
-Folder Structure
-
+```
 agent-tracker/
-├── backend/  
-├── frontend
+├── backend/
+├── frontend/
 ├── README.md
+```
+
+---
+
+## License
+
+MIT License
